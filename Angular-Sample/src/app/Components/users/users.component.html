@@ -1,0 +1,16 @@
+<main>
+    <table>
+        <th>
+            <tr>
+                ID
+            </tr>
+            <tr>
+                Name
+            </tr>
+            </th>
+            <tr *ngFor="let user of userData">
+                <td (click)="onIdClick(user.id)">{{user.id}}</td>
+                <td>{{user.name}}</td>
+                </tr>
+        </table>
+    </main>

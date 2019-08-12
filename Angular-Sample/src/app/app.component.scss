@@ -1,0 +1,27 @@
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    height: 50px;
+  }
+
+  .container{
+      display:flex;
+  }
+  #menu{
+      order:1;
+      flex:0 0 10%;
+      max-width:25%;
+  }
+  #mainContent{
+      order: 2;
+      left: 5%;
+      flex: 0 0 85%;
+      max-width: 75%;
+  }

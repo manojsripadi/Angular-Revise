@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+<app-header [name]="headerName" (selectHeader)="onHeaderClick($event)"></app-header>
+</header>
+<main class="container">
+  <section id="menu">
+    <app-menu></app-menu>
+  </section>
+  <section id="mainContent"> 
+<div>
+  <input type="text" id="name" [(ngModel)]="name" />
+  <label for="name" #enterYrName>Enter your name</label>
+</div>
+<button (click)="buttonClick()">Click Me!</button>
+
+<p *ngIf="name ;else enterName">{{name}}</p>
+
+<ng-template #enterName> 
+  <p>
+    Enter name in the above textbox
+  </p>
+</ng-template>
+<br/>
+<p>{{thanksMsg}}</p>
+<br/>
+<hr/>
+<div style="float: right;">
+    <label for="filter">colorFilter:</label>
+    <input type="text" id="filter" [(ngModel)]="filterValue" />
+</div>
+<br/>
+<table>
+  <tr>
+    <th>Color</th>
+    <th>Hexa Value</th>
+    </tr>
+    <tr *ngFor="let color of filterValue| sortColor">
+      <td>{{color.color}}</td>
+      <td>{{color.value}}</td>
+    </tr>
+  </table>
+  </section>
+</main>
+<footer>
+  <app-footer></app-footer>
+</footer>
+<router-outlet></router-outlet>
